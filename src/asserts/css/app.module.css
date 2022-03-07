@@ -1,0 +1,8 @@
+.container{
+    padding: 24px;
+    background-color: var(--semi-color-bg-0);;
+}
+
+.app{
+    height: 100%;
+}
