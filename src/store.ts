@@ -1,14 +1,11 @@
 import { atom } from "recoil";
+import { User } from "./api/typings";
 
-const userState= atom<{
-    id: number
-    name: string
-    avatar: string
-}>({
+const userState= atom<User>({
     key:'user',
     default:{
         id:0,
-        name:'',
+        username:'',
         avatar: ''
     }
 })

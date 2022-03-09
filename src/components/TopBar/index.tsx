@@ -61,7 +61,7 @@ function TopBar() {
                                     onClick={()=>{
                                         setUser({
                                             id:0,
-                                            name:'',
+                                            username:'',
                                             avatar:''
                                         })
                                     }}
@@ -69,8 +69,8 @@ function TopBar() {
                             </Dropdown.Menu>
                         }
                     >
-                        <Avatar size="small" color='light-blue' style={{ margin: 4 }} src={user.avatar}>{user.name}</Avatar>
-                        <span>{user.name}</span>
+                        <Avatar size="small" color='light-blue' style={{ margin: 4 }} src={user.avatar}>{user.username}</Avatar>
+                        <span>{user.username}</span>
                     </Dropdown>: <Button theme='solid' type='primary' style={{ marginRight: 8 }} 
                         onClick={()=>{
                             navigate('/login?redirect='+location.pathname)

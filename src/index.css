@@ -37,3 +37,7 @@ a{
   border-radius: 5px;
   background: #ffffff;
 }
+
+.point-hand:hover{
+  cursor: pointer;
+}
