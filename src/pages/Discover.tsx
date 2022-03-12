@@ -1,22 +1,24 @@
-import { Col, Row } from '@douyinfe/semi-ui'
+import BlogCard from '@/components/BlogCard'
+import { Button, Col, Row, Space } from '@douyinfe/semi-ui'
 import React from 'react'
 
 function Discover() {
   return (
-    <Row  gutter={24}>
-      <Col xs={12} sm={12} md={12} lg={10} xl={10} 
-          offset={4} >
+    <Row gutter={24}>
+      <Col xs={24} sm={24} md={} lg={18} xl={12}
+        offset={4} >
         <div id="left" style={{
           borderRadius: '10px',
           border: '1px solid var(--semi-color-border)',
           height: '376px',
           padding: '32px',
         }}>
-          <div className="col-content">左侧内容</div>
+          <Space vertical>
+           <BlogCard/>
+          </Space>
         </div>
       </Col>
-      <Col xs={0} sm={0} md={0} lg={4} xl={4}  >
-        <div className="col-content">右侧内容</div>
+      <Col xs={0} sm={0} md={0} lg={0} xl={4}  >
       </Col>
     </Row >
   )
