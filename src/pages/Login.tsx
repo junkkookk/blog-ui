@@ -11,10 +11,16 @@ import { useSearchParams } from "react-router-dom";
 import { useRecoilState } from "recoil";
 
 const renderUrl = 'http://localhost:9001/oauth/render/gitee'
-const redirectUrl = 'http://localhost:3000/login'
+const redirectUrl = 'http://localhost:5000/login'
 
 
 const { Title, Text } = Typography
+
+const loadingOpts = {
+    content: '正在登陆...',
+    duration: 0,
+    icon: <Spin />
+};
 
 function Login(props: any) {
     const navigate = useNavigate()
@@ -23,12 +29,8 @@ function Login(props: any) {
     const form = useRef<FormApi>();
 
     const handleLogin = async (data: any) => {
-        let opts = {
-            content: '正在登陆...',
-            duration: 0,
-            icon: <Spin />
-        };
-        const id = Toast.info(opts)
+        
+        const id = Toast.info(loadingOpts)
         const res = await login(data)
         Toast.close(id)
         handleLoginSuccess(res)
@@ -56,7 +58,9 @@ function Login(props: any) {
         let code = searchParams.get('code')
         let state = searchParams.get('state')
         if (code && state) {
+            const id = Toast.info(loadingOpts)
             oauthLogin({ code, state, redirectUrl }).then(res => {
+                Toast.close(id)
                 handleLoginSuccess(res)
             })
         }

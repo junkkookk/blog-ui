@@ -5,8 +5,8 @@ import React from 'react'
 function Discover() {
   return (
     <Row gutter={24}>
-      <Col xs={24} sm={24} md={} lg={18} xl={12}
-        offset={4} >
+      <Col xs={24} sm={24} md={10} lg={15} xl={12}
+         >
         <div id="left" style={{
           borderRadius: '10px',
           border: '1px solid var(--semi-color-border)',
